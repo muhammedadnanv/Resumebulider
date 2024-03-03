@@ -5,26 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume Builder</title>
   <link rel="shortcut icon" href="https://i.ibb.co/k0V77GL/unnamed.png" type="image/x-icon">
-  <link rel="manifest" href="manifest.json">
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      color: #000;
       background-color: #000;
-      background-image: url(''); /* Insert background image URL here */
+      color: #00ff3c;
     }
 
     header {
       background-color: #00ff37;
-      color: #f4fefb;
+      color: #000;
       text-align: center;
       padding: 20px;
     }
 
     .container {
-      max-width: 70vw;
+      max-width: 90%;
       margin: 0 auto;
       padding: 2rem;
       background-color: #000;
@@ -60,20 +58,6 @@
       padding: 0;
     }
 
-    #preview {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      border: 1px solid #77ff00;
-      background-color: #000;
-      color: #a2ff00;
-    }
-
-    #previewContent {
-      font-size: 1.2rem;
-    }
-
-    /* Responsive styles */
     @media screen and (max-width: 600px) {
       .container {
         padding: 1rem;
@@ -92,12 +76,12 @@
   </style>
 </head>
 <body>
-<header class="bg-success text-white py-3">
-    <div class="container">
-      <h1 class="text-center">Resume Builder</h1><br>
-      <p>Developed By AD Web Comic Agency</p>
-    </div>
-  </header>
+<header>
+  <div class="container">
+    <h1>Resume Builder</h1>
+    <p>Developed By AD Web Comic Agency</p>
+  </div>
+</header>
 <div class="container">
   <form id="resumeForm">
     <section id="contactInfo">
@@ -112,29 +96,8 @@
       <input type="text" name="phone" placeholder="Phone">
     </section>
     <section id="summary">
-      <h2>Resume Objective or Summary</h2>
+      <h2>Write About You</h2>
       <textarea name="summary" placeholder="Objective or Summary"></textarea>
-    </section>
-    <section id="experience">
-      <h2>Work Experience</h2>
-      <input type="text" name="jobTitle" placeholder="Job Title">
-      <input type="text" name="company" placeholder="Company">
-      <input type="text" name="jobLocation" placeholder="Location">
-      <input type="text" name="jobStartDate" placeholder="Start Date">
-      <input type="text" name="jobEndDate" placeholder="End Date">
-      <textarea name="jobDescription" placeholder="Job Description"></textarea>
-    </section>
-    <section id="noExperience">
-      <h2>No Work Experience</h2>
-      <input type="checkbox" id="noWorkExperience" name="noWorkExperience">
-      <label for="noWorkExperience">No work experience</label>
-    </section>
-    <section id="education">
-      <h2>Education</h2>
-      <input type="text" name="degree" placeholder="Degree">
-      <input type="text" name="fieldOfStudy" placeholder="Field of Study">
-      <input type="text" name="university" placeholder="University">
-      <input type="text" name="graduationYear" placeholder="Graduation Year">
     </section>
     <section id="skills">
       <h2>Skills</h2>
@@ -147,69 +110,9 @@
       <button type="button" onclick="addSkill()">Add Skill</button>
       <ul id="skillList"></ul>
     </section>
-    <section id="certifications">
-      <h2>Certifications and Training</h2>
-      <input type="text" name="certificationName" placeholder="Certification/Training Name">
-      <input type="text" name="certificationAuthority" placeholder="Authority">
-      <input type="text" name="certificationDate" placeholder="Date">
-    </section>
-    <section id="awards">
-      <h2>Awards and Honors</h2>
-      <input type="text" name="awardName" placeholder="Award Name">
-      <input type="text" name="awardIssuer" placeholder="Issuer">
-      <input type="text" name="awardDate" placeholder="Date">
-    </section>
-    <section id="volunteer">
-      <h2>Volunteer Experience (optional)</h2>
-      <input type="text" name="volunteerPosition" placeholder="Position">
-      <input type="text" name="volunteerOrganization" placeholder="Organization">
-      <input type="text" name="volunteerLocation" placeholder="Location">
-      <input type="text" name="volunteerStartDate" placeholder="Start Date">
-      <input type="text" name="volunteerEndDate" placeholder="End Date">
-      <textarea name="volunteerDescription" placeholder="Description"></textarea>
-    </section>
-    <section id="publications">
-      <h2>Publications (optional)</h2>
-      <input type="text" name="publicationTitle" placeholder="Publication Title">
-      <input type="text" name="publicationAuthor" placeholder="Author">
-      <input type="text" name="publicationDate" placeholder="Date">
-    </section>
-    <section id="patents">
-      <h2>Patents (optional)</h2>
-      <input type="text" name="patentTitle" placeholder="Patent Title">
-      <input type="text" name="patentInventor" placeholder="Inventor">
-      <input type="text" name="patentDate" placeholder="Date">
-    </section>
-    <section id="languages">
-      <h2>Languages Spoken</h2>
-      <input type="text" name="language" placeholder="Language">
-      <input type="text" name="proficiencyLevel" placeholder="Proficiency Level">
-    </section>
-    <section id="affiliations">
-      <h2>Professional Affiliations</h2>
-      <input type="text" name="affiliationName" placeholder="Affiliation Name">
-      <input type="text" name="affiliationPosition" placeholder="Position">
-      <input type="text" name="affiliationOrganization" placeholder="Organization">
-    </section>
-    <section id="projects">
-      <h2>Projects (optional)</h2>
-      <input type="text" name="projectTitle" placeholder="Project Title">
-      <input type="text" name="projectRole" placeholder="Role">
-      <input type="text" name="projectDate" placeholder="Date">
-      <textarea name="projectDescription" placeholder="Description"></textarea>
-    </section>
-    <section id="references">
-      <h2>References (available upon request or provided directly)</h2>
-      <input type="text" name="referenceName" placeholder="Reference Name">
-      <input type="text" name="referencePosition" placeholder="Position">
-      <input type="text" name="referenceCompany" placeholder="Company">
-      <input type="text" name="referenceEmail" placeholder="Email">
-      <input type="text" name="referencePhone" placeholder="Phone">
-    </section>
-    <button type="button" onclick="downloadPDF()">Download Resume (PDF)</button>
+    <button type="button" onclick="downloadResume()">Download Resume (Text)</button>
   </form>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script>
   function addSkill() {
     const skillName = document.querySelector('input[name="skillName"]').value;
@@ -222,8 +125,7 @@
     document.querySelector('select[name="proficiency"]').selectedIndex = 0;
   }
 
-  function downloadPDF() {
-    const doc = new jsPDF();
+  function downloadResume() {
     const contactInfo = {
       fullName: document.querySelector('input[name="fullName"]').value,
       address: document.querySelector('input[name="address"]').value,
@@ -234,37 +136,32 @@
       phone: document.querySelector('input[name="phone"]').value,
     };
     const summary = document.querySelector('textarea[name="summary"]').value;
-    let content = `
+    const skills = Array.from(document.querySelectorAll('#skillList li')).map(li => li.textContent).join('\n');
+
+    const content = `
       Contact Information:
       Full Name: ${contactInfo.fullName}
       Address: ${contactInfo.address}, ${contactInfo.city}, ${contactInfo.state}, ${contactInfo.zipCode}
       Email: ${contactInfo.email}
       Phone: ${contactInfo.phone}
 
-      `;
-    if (summary.trim() !== '') {
-      content += `Resume Objective or Summary:
+      ${summary.trim() !== '' ? `
+      Resume Objective or Summary:
       ${summary}
+      ` : ''}
 
-      `;
-    }
-    doc.text(content, 10, 10);
-    doc.save('resume.pdf');
+      Skills:
+      ${skills}
+    `;
+
+    const fileName = 'resume.txt';
+    const blob = new Blob([content], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = fileName;
+    link.click();
+    URL.revokeObjectURL(link.href);
   }
-  </script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch(error => {
-            console.error('Service Worker registration failed:', error);
-          });
-      });
-    }
-  </script>
-<script src="services.js><script>
+</script>
 </body>
 </html>
